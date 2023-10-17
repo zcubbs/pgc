@@ -1,4 +1,4 @@
-package main
+package pgc
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func updatePgHba(pgHbaConf []struct {
+func UpdatePgHba(pgHbaConf []struct {
 	Type     string `yaml:"type"`
 	Database string `yaml:"database"`
 	User     string `yaml:"user"`

@@ -1,11 +1,11 @@
-package main
+package pgc
 
 import (
 	"fmt"
 	"os/exec"
 )
 
-func restartPostgres(command string) error {
+func RestartPostgres(command string) error {
 	cmd := exec.Command("bash", "-c", command)
 	err := cmd.Run()
 	if err != nil {

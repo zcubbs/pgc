@@ -1,4 +1,4 @@
-package main
+package pgc
 
 import (
 	"gopkg.in/yaml.v2"
@@ -37,7 +37,7 @@ type Config struct {
 }
 
 // Load the config from a file
-func loadConfig(filename string) (Config, error) {
+func LoadConfig(filename string) (Config, error) {
 	config := Config{}
 	data, err := os.ReadFile(filename)
 	if err != nil {
