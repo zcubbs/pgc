@@ -1,0 +1,44 @@
+postgresql:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "secret"
+
+databases:
+  - name: "mydb1"
+    owner: "user1"
+
+  - name: "mydb2"
+    owner: "user2"
+
+users:
+  - name: "user1"
+    password: "pass1"
+
+  - name: "user2"
+    password: "pass2"
+
+privileges:
+  - database: "mydb1"
+    user: "user1"
+    privileges: "ALL PRIVILEGES"
+
+  - database: "mydb2"
+    user: "user2"
+    privileges: "ALL PRIVILEGES"
+
+pg_hba:
+  - type: "host"
+    database: "mydb1"
+    user: "user1"
+    address: "0.0.0.0/0"
+    method: "md5"
+
+  - type: "host"
+    database: "mydb2"
+    user: "user2"
+    address: "0.0.0.0/0"
+    method: "md5"
+
+pg_hba_conf_path: "/var/lib/postgresql/data/pg_hba.conf"
+restart_cmd: "pg_ctl reload"
